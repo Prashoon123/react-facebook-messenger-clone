@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Button, FormControl, InputLabel, Input, IconButton } from '@material-ui/core';
+import { FormControl, Input, IconButton } from '@material-ui/core';
 import './App.css';
 import Message from './Message';
 import db from './firebase';
 import firebase from 'firebase';
 import FlipMove from 'react-flip-move';
 import SendIcon from '@material-ui/icons/Send';
-import headerLogo from './headerLogo.png';
 import headerlogo from './YQbyhl59TWY.ico';
 
 function App() {
