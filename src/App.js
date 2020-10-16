@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Button, FormControl, InputLabel, Input } from '@material-ui/core';
+import { Button, FormControl, InputLabel, Input, IconButton } from '@material-ui/core';
 import './App.css';
 import Message from './Message';
 import db from './firebase';
 import firebase from 'firebase';
 import FlipMove from 'react-flip-move';
+import SendIcon from '@material-ui/icons/Send';
 import headerLogo from './headerLogo.png';
 import headerlogo from './YQbyhl59TWY.ico';
 
@@ -39,12 +40,6 @@ function App() {
     setInput('');
   }
 
-  // if (!username) {
-  //   return (
-  //     <h1>Please enter a username to continue, to enter a username simply refresh this page.</h1>
-  //   )
-  // }
-
   return (
     // BEM naming convention
     <div className="app">
@@ -52,10 +47,11 @@ function App() {
       <h1>Messenger</h1>
       <h2>Welcome {username}</h2>
       <form className="app__form">
-        <FormControl>
-          <InputLabel>Enter a message...</InputLabel>
-          <Input value={input} onChange={event => setInput(event.target.value)} />
-          <Button disabled={!input} variant="contained" color="primary" type='submit' onClick={sendMessage}>Send Message</Button>
+        <FormControl className="app__formControl">
+          <Input className="app__input" placeholder="Enter a message..." value={input} onChange={event => setInput(event.target.value)} />
+          <IconButton className="app__iconButton" disabled={!input} color="primary" variant="contained" type='submit' onClick={sendMessage}>
+            <SendIcon />
+          </IconButton>
         </FormControl>
       </form>
       <FlipMove>
